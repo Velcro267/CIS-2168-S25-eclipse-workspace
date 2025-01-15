@@ -12,16 +12,7 @@ public class Rabbit extends Animal {
     }
     
     int decideMove() {
-    	//look all around for Fox
-    	canSeeFoxNow = false;
-    	for(int i = Model.MIN_DIRECTION; i <= Model.MAX_DIRECTION; i++) {
-    		if(look(i) == Model.FOX) {
-    			canSeeFoxNow = haveSeenFox = true;
-    			directionToFox = i;
-    			distanceToFox = distance(i);
-    		}
-    		
-    	}
+    	
     	
     	
     	
