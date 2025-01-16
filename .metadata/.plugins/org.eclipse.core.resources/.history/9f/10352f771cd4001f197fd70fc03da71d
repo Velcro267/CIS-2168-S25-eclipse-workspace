@@ -9,10 +9,9 @@ public class Rabbit extends Animal {
     	//look all around for Fox
     	for(int i = Model.MIN_DIRECTION; i <= Model.MAX_DIRECTION; i++) {
     		if(look(i) == Model.FOX) {
-    			if(canMove(Model.turn(i, i))) 
-    				return Model.turn(i, i);
-    			else if(canMove(Model.turn))
-    			
+    			if(canMove()) {
+    				return 
+    			}
     			return Model.turn(i, 5);
     		}
     		
