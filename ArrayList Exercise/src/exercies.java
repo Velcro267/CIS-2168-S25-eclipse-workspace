@@ -9,7 +9,6 @@ public class exercies {
 
 	}
 	
-	
 	public static <E> boolean unique(List<E> list){
 		for(int i = 0; i < list.size(); i++) {
 			for(int j = 0; j < list.size(); j++) {
@@ -67,14 +66,29 @@ public class exercies {
 	
 	public static List<String> stringToListOfWords(String s){
 		List<String> output = new ArrayList<>();
+		String[] words = s.split("\\s+");
 		
-		
-		
+		for(int i = 0; i < words.length; i++) {
+			output.add(words[i]);
+		}
 		
 		return output;
 	}
 	
-	//public static 
+	
+	
+	public static <E> void removeAllInstances(List<E> list, E item) {
+		while(list.contains(item)) {
+			for(int i = 0; i < list.size(); i++){
+				if(list.get(i).equals(item)) {
+					list.remove(i);
+				}
+			}
+			
+		}
+		
+		
+		
 	
 	
 }
