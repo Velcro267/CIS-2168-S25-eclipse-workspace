@@ -1,26 +1,80 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class exercies {
 
 	public static void main(String[] args) {
-		//Main used to test methods 
 
 	}
 	
 	
 	public static <E> boolean unique(List<E> list){
-		
-		
-		
-		
+		for(int i = 0; i < list.size(); i++) {
+			for(int j = 0; j < list.size(); j++) {
+				if(list.get(i).equals(list.get(j))) {
+					return false;
+				}
+			}
+		}
 		return true;
 	}
 	
 	
-	public static 
+	
+	public static List<Integer> allMultiples(List<Integer> list, int x){
+		List<Integer> output = new ArrayList<>();
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i) % x == 0) {
+				output.add(list.get(i));
+			}
+		}
+		
+		return output;
+	}
 	
 	
-
+	
+	public static List<String> allStringsofSize(List<String> list, int length){
+		List<String> output = new ArrayList<>();
+		for(int i = 0; i < list.size();i++) {
+			if(list.get(i).length() == length) {
+				output.add(list.get(i));
+			}
+		}
+		
+		return output;
+	}
+	
+	
+	
+	public static <E extends Comparable<E>> boolean isPermutation(List<E> A, List<E> B) {
+		List<E> sortA = new ArrayList<>();
+		List<E> sortB = new ArrayList<>();
+		
+		sortA.addAll(A);
+		sortB.addAll(B);
+		
+		Collections.sort(sortA);
+		Collections.sort(sortB);
+		
+		
+		
+		return sortA.equals(sortB);
+	}
+	
+	
+	public static List<String> stringToListOfWords(String s){
+		List<String> output = new ArrayList<>();
+		
+		
+		
+		
+		return output;
+	}
+	
+	//public static 
+	
+	
 }
