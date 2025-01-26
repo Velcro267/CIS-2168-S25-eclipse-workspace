@@ -12,7 +12,7 @@ public class exercies {
 	public static <E> boolean unique(List<E> list){
 		for(int i = 0; i < list.size(); i++) {
 			for(int j = 0; j < list.size(); j++) {
-				if(list.get(i).equals(list.get(j))) {
+				if(i != j && list.get(i).equals(list.get(j))) {
 					return false;
 				}
 			}
