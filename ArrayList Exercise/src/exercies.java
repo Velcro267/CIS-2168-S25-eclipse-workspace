@@ -29,8 +29,9 @@ public class exercies {
 		
 		//Test Remove All Instances method 
 		List<Integer> z = Arrays.asList(1, 4, 5, 6, 5, 5, 2);
-		removeAllInstances(z, 5);
-		System.out.println(z);
+		List<Integer> z1 = new ArrayList<>(z);
+		removeAllInstances(z1, 5);
+		System.out.println(z1);
 
 
 	}
@@ -105,14 +106,8 @@ public class exercies {
 	
 	public static <E> void removeAllInstances(List<E> list, E item) {
 		while(list.contains(item)) {
-			for(int i = 0; i < list.size(); i++){
-				if(list.get(i).equals(item)) {
-					list.remove(item);
-				}
-			}
-			
+			list.remove(item);
 		}
-		
 		
 	}
 	
