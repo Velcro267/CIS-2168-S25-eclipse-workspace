@@ -1,6 +1,7 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
+//import java.util.List;
+//import java.util.ArrayList;
+//import java.util.Collections;
+import java.util.*;
 
 
 public class exercies {
@@ -14,8 +15,8 @@ public class exercies {
 		System.out.println(allMultiples(x, 5));
 		
 		//Test All Strings of Size method
-		List<String> y = Arrays.asList("I", "like", "to", "eat", "eat", "eat",""
-				+ "apples", "and", "bananas");
+		List<String> y = Arrays.asList("I", "like", "to", "eat", "eat", "eat", 
+				"apples", "and", "bananas");
 		System.out.println(allStringsofSize(y, 3));
 		
 		//Test Is Permutation method
