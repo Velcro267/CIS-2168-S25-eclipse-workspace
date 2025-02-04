@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/CircularLinkedList.java</name>
-			<type>1</type>
-			<location>/Users/abeiltedla/Downloads/CircularLinkedList.java</location>
-		</link>
-	</linkedResources>
 </projectDescription>
