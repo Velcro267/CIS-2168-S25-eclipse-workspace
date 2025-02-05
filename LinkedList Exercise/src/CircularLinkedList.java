@@ -21,8 +21,12 @@ public class CircularLinkedList<E> implements Iterable<E> {
 	// Return Node<E> found at the specified index
 	// be sure to handle out of bounds cases
 	private Node<E> getNode(int index ) {
+		Node<E> current = head;
+		for(int i = 0; i < index; i++) {
+			current = current.next;
+		}
 
-		return null;
+		return current;
 	}
 
 
@@ -42,6 +46,20 @@ public class CircularLinkedList<E> implements Iterable<E> {
 	// adding anywhere else
 	// REMEMBER TO INCREMENT THE SIZE
 	public void add(int index, E item){
+		if(index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index out of bounds.");
+		}
+		
+		Node<E> adding = new Node<>(item);
+		if(index == 0) {
+			adding.next = head;
+			head = adding;
+		} else {
+			
+		}
+		
+		
+		size++;
 
 	}
 
