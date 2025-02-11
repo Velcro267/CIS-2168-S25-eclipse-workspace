@@ -95,17 +95,19 @@ public class CircularLinkedList<E> implements Iterable<E> {
 		
 		E toReturn = null;
 		if(size == 1) {
-			head = head.next;
 			toReturn = head.item;
-			
+			head = head.next;
+
 		} else if(index == 0) {
-			
-			
+			toReturn =head.item;
+			head = head.next;
+			tail.next = head;
 			
 		} else if (index == size-1) {
-			
-			
-			
+			toReturn = tail.item;
+			Node<E> before = getNode(index-1);
+			tail = before;
+			tail.next = head;
 			
 		}else {
 			Node<E> before = getNode(index -1);
@@ -219,6 +221,12 @@ public class CircularLinkedList<E> implements Iterable<E> {
 		list.add(2);
 		list.add(3);
 		list.add(0, -1);
+		System.out.println(list);
+		list.remove(0);
+		System.out.println(list);
+		list.remove(2);
+		System.out.println(list);
+		list.remove(2);
 		System.out.println(list);
 		
 		
