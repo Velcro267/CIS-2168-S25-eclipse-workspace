@@ -51,16 +51,30 @@ public class CircularLinkedList<E> implements Iterable<E> {
 		}
 		
 		Node<E> adding = new Node<>(item);
-		if(index == 0) {
+		if(size == 0) {
+			head = adding;
+			tail = adding;
+			tail.next = adding;
+		}else if(index ==0) {
 			adding.next = head;
 			head = adding;
+			tail.next = head;
+		}else if(index == size) {
+			Node<E> last = getNode(index -1);
+			adding.next = head;
+			last.next = adding;
+			tail = adding;
 		} else {
+			Node<E> before = getNode(index -1);
+			adding.next = before.next;
+			before.next = adding;
 			
 		}
 		
 		
+		
+		
 		size++;
-
 	}
 
 	
@@ -75,7 +89,33 @@ public class CircularLinkedList<E> implements Iterable<E> {
 	// removing any other node
 	// REMEMBER TO DECREMENT THE SIZE
 	public E remove(int index) {
-		return null;
+		if(index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException("Index out of bounds.");
+		}
+		
+		E toReturn = null;
+		if(size == 1) {
+			head = head.next;
+			toReturn = head.item;
+			
+		} else if(index == 0) {
+			
+			
+			
+		} else if (index == size-1) {
+			
+			
+			
+			
+		}else {
+			Node<E> before = getNode(index -1);
+			before.next = before.next.next;
+			
+		}
+		
+		
+		size--;
+		return toReturn;
 	}
 	
 	
@@ -173,8 +213,13 @@ public class CircularLinkedList<E> implements Iterable<E> {
 	}
 	
 	public static void main(String[] args){
-		
-		
+		CircularLinkedList<Integer> list = new CircularLinkedList<>();
+		list.add(0);
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(0, -1);
+		System.out.println(list);
 		
 		
 		
