@@ -213,25 +213,25 @@ public class CircularLinkedList<E> implements Iterable<E> {
 	}
 	
 	public static void main(String[] args){
-		
-		  CircularLinkedList<Integer> list = new CircularLinkedList<>(); 
-		  int n = 10;
+		  CircularLinkedList<Integer> l = new CircularLinkedList<>();
+		  int n = 5;
 		  int k = 2;
-		  for(int i = 0; i <= n; i++ ) {
-			  list.add(i);
-		  }
-		  System.out.println(list);
-		  list.iterator().remove();
-		  System.out.println(list);
+			for(int i = 1; i <= n; i++) {
+				l.add(i);
+			}
+			System.out.println(l);
+			Iterator<Integer> brock = l.iterator();
+			while(brock.hasNext()) {
+				int k1 =k;
+				while(k1 != 0) {
+					brock.next();
+					k1--;
+				}
+				brock.remove();
+				System.out.println(l);
+			}
 
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
+		
 		  
 			
 			/*
@@ -241,36 +241,9 @@ public class CircularLinkedList<E> implements Iterable<E> {
 			 * System.out.println(list);
 			 */
 		 
-		//josephusProblem(15,4);
 		
 	}
 	
-	
-	
-	public static void josephusProblem(int n,int k) {
-		CircularLinkedList<Integer> l = new CircularLinkedList<>();
-		for(int i = 0; i <= n; i++) {
-			l.add(i);
-		}
-		System.out.println(l);
-		l.iterator();
-		while(l.iterator().hasNext()) {
-			int k1 =k;
-			while(k1 != 0) {
-				l.iterator().next();
-				k1--;
-			}
-			l.iterator().remove();
-			System.out.println(l);
-		}
-
-		
-	}
-	
-	
-
-
-
 	
 	
 }
