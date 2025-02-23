@@ -31,6 +31,39 @@ public class MazeGridPanel extends JPanel{
 		finish.setBackground(Color.RED);
 		stack.push(start);
 
+
+		while(!stack.isEmpty()) {
+			Cell current = stack.peek();
+			
+			if(current == finish) {			//If End is Reached, Stop Searching 
+				break;
+			}
+			
+			if(!current.northWall && !visited(current.row-1, current.col)) {		//Check North
+				stack.push(maze[current.row-1][current.col]);
+				current.setBackground(Color.GREEN);
+				
+			}else if(!current.southWall && !visited(current.row+1, current.col)) { 	//Check South
+				stack.push(maze[current.row+1][current.col]);
+				current.setBackground(Color.GREEN);
+				
+			}else if(!current.eastWall && !visited(current.row, current.col+1)) {	//Check East
+				stack.push(maze[current.row][current.col+1]);
+				current.setBackground(Color.GREEN);
+				
+			}else if(!current.westWall && !visited(current.row, current.col-1)) {	//Check West
+				stack.push(maze[current.row][current.col-1]);
+				current.setBackground(Color.GREEN);
+				
+			}else {																	//Dead End, Start Backtracking 
+				current.setBackground(Color.GRAY);
+				stack.pop();
+				
+			}
+			
+			
+		}	
+
 	}
 
 
