@@ -214,7 +214,7 @@ public class CircularLinkedList<E> implements Iterable<E> {
 	
 	public static void main(String[] args){
 		  CircularLinkedList<Integer> l = new CircularLinkedList<>();
-		  int n = 5;
+		  int n = 13;
 		  int k = 2;
 			for(int i = 1; i <= n; i++) {
 				l.add(i);
