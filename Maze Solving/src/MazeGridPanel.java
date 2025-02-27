@@ -22,6 +22,8 @@ public class MazeGridPanel extends JPanel{
 		stack.push(start);
 	}
 
+	
+	
 	//homework
 	public void solveMaze() {
 		Stack<Cell> stack  = new Stack<Cell>();
