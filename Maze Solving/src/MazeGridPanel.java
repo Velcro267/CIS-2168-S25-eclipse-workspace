@@ -38,7 +38,7 @@ public class MazeGridPanel extends JPanel{
 			Cell current = stack.peek();
 			
 			if(current == finish) {			//If End is Reached, Stop Searching 
-				current.setBackground(Color.GREEN);
+				current.setBackground(Color.MAGENTA);
 				break;
 			}
 			

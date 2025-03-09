@@ -1,9 +1,8 @@
 import java.util.Stack;
 
-public class Exercise {
-	
-	
-	
+public class Towers_of_Hanoi {
+
+
 	static Stack<Integer> A = new Stack<>();
 	static Stack<Integer> B = new Stack<>();
 	static Stack<Integer> C = new Stack<>();
@@ -42,5 +41,4 @@ public class Exercise {
 		
 	}
 	
-
 }
