@@ -8,8 +8,12 @@ public class recursion {
 		
 		
 		
-	
-
+		if(solveBoard(board, 0)) {
+			printBoard(board);
+		} else {
+			System.out.println("No Solution.");
+		}
+		
 	}
 	
 	
@@ -26,16 +30,34 @@ public class recursion {
 	
 	
 	public static boolean solveBoard(int [][]board, int col) {
-		//Base case
+		//Base case: Off the board, or all queens placed 
 		if(col >=8) {
 			return true;
 		}
 		
 		
 		
+		for(int row = 0; row < 8; row++) {		//Try placing queen in each row of current column
+			if(isValid(board, row, col)) {
+				board[row][col] = 1;			//Place queen
+				
+				
+				
+				if(solveBoard(board, col+1)) {	//Recursive Step: try placing next queen 
+					return true;
+				}
+			}
+			
+			
+			board[row][col] = 0;				//Backtrack: placing queen didn't work
+			
+			
+		}
 		
 		
-		return false;			// No Valid position found in this column
+		
+		
+		return false;							// No Valid position found in this column
 	}
 	
 	
@@ -43,10 +65,31 @@ public class recursion {
 	
 	
 	
-	public static boolean isVaild() {
+	public static boolean isValid(int [][]board, int row, int col) {
+		//Check left side of row
+		for(int i = 0; i < col; i++) {		
+			if(board[row][i] == 1) {
+				return false;
+			}
+		}
+		
+		//Check upper left diagonal
+		for(int i = row, j = col; i>= 0 && j >= 0; i--, j--) {
+			if(board[i][j]== 1) {
+				return false;
+			}
+		}
+		
+		//Check lower left diagonal 
+		for(int i = row, j = col; i < 8 && j >= 0; i++, j--) {
+			if(board[i][j]== 1) {
+				return false;
+			}
+		}
 		
 		
-		return true;
+		
+		return true;			//Good to place a queen
 	}
 
 
