@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
-public class recursion {
+
+public class EightQueens {
 
 	public static void main(String[] args) {
 		//8 Queens Problem  
@@ -11,24 +12,6 @@ public class recursion {
 		} else {
 			System.out.println("No Solution.");
 		}
-		
-		
-		//Sudoku Problem
-		int[][] sudokuBoard = {
-				{5, 9, 0, 3, 0, 0, 8, 0, 2},
-				{1, 8, 0, 0, 0, 2, 9, 5, 3},
-				{7, 0, 0, 0, 0, 0, 0, 0, 1},
-				{2, 1, 0, 6, 0, 7, 3, 0, 0},
-				{6, 0, 0, 5, 4, 0, 1, 0, 0},
-				{0, 4, 9, 2, 0, 0, 0, 6, 5},
-				{3, 0, 8, 9, 0, 5, 4, 1, 0},
-				{0, 5, 1, 0, 6, 4, 2, 0, 0},
-				{0, 2, 0, 0, 0, 3, 5, 9, 0}, 
-				
-		};
-		
-		
-		
 		
 		
 	}
@@ -54,9 +37,9 @@ public class recursion {
 		
 		
 		
-		for(int row = 0; row < 8; row++) {		//Try placing queen in each row of current column
+		for(int row = 0; row < 8; row++) {			//Try placing queen in each row of current column
 			if(is8QValid(board, row, col)) {
-				board[row][col] = 1;			//Place queen
+				board[row][col] = 1;				//Place queen
 				
 				
 				
@@ -66,7 +49,7 @@ public class recursion {
 			}
 			
 			
-			board[row][col] = 0;				//Backtrack: placing queen didn't work
+			board[row][col] = 0;					//Backtrack: placing queen didn't work
 			
 			
 		}
@@ -106,8 +89,9 @@ public class recursion {
 		
 		
 		
-		return true;			//Good to place a queen
+		return true;					//Good to place a queen
 	}
-
+	
+	
 
 }
