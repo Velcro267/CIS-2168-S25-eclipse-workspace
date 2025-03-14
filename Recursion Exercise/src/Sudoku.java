@@ -16,7 +16,8 @@ public class Sudoku {
 				
 		};
 		
-		if(solveBoard(board, 0, 0)) {
+		
+		if(solveBoard(board)) {
 			printBoard(board);
 		} else {
 			System.out.println("No Solution.");
@@ -36,10 +37,34 @@ public class Sudoku {
 	
 	
 	
-	public static boolean isValid(int[][] board, int row, int col ) {
+	public static boolean isValid(int[][] board, int row, int col, int num ) {
+		//Check row
+		for(int i = 0; i < 9; i++) {
+			if(board[row][i] == num){
+				return false;
+			}
+		}
+		
+		//Check column 
+		for(int i = 0; i < 9; i++) {
+			if(board[i][col] == num) {
+				return false;
+			}
+		}
 		
 		
+		//Check 3x3 sub-grid
+		int startRow = (row/3) * 3;
+		int startCol = (col/3) * 3;
 		
+		// Loop through the 3x3 sub-grid
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				if(board[startRow + i][startCol + j] == num) {
+					return false;
+				}
+			}
+		}
 		
 		
 		return true;					//Good to place number 
@@ -48,14 +73,29 @@ public class Sudoku {
 	
 	
 	
-	public static boolean solveBoard(int[][] board, int row, int col ) {
+	public static boolean solveBoard(int[][] board) {
+		for(int row = 0; row < 9; row++) {
+			
+			for(int col = 0; col < 9; col++) {
+				
+				if(board[row][col] == 0) {						//Find an empty slot
+					for(int num = 1; num <= 9; num++) {			//Try every number possible
+						
+						if(isValid(board, row, col, num)) {
+							board[row][col] = num;				//Place the number if possible 
+							
+							if(solveBoard(board)) {				//Recursive Step: try placing next number
+								return true;
+							}
+						}
+						board[row][col] = 0;					//Backtrack: couldn't find a valid number 
+					}
+					return false;
+				}
+			}
+		}
 		
-		
-		
-		
-		
-		
-		return false;					//No Valid position found; Backtrack Time 	
+		return true;					//Board is completely filled	
 	}
 
 	

@@ -57,7 +57,7 @@ public class EightQueens {
 		
 		
 		
-		return false;							// No Valid position found in this column
+		return false;								// No Valid position found in this column
 	}
 	
 	
@@ -95,3 +95,12 @@ public class EightQueens {
 	
 
 }
+
+
+
+
+
+
+
+
+
