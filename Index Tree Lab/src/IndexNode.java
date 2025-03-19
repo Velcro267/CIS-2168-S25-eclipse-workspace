@@ -6,7 +6,7 @@ public class IndexNode  {
 	// The word for this entry
 	String word;
 	// The number of occurrences for this word
-	int occurences;
+	int occurrences;
 	// A list of line numbers for this word.
 	List<Integer> list; 
 	
@@ -19,7 +19,13 @@ public class IndexNode  {
 	// Constructors
 	// Constructor should take in a word and a line number
 	// it should initialize the list and set occurrences to 1
-	
+	public IndexNode(String word, int lineNum, List<Integer> list) {
+		this.word= word;
+		this.occurrences = 1;
+		this.list = list;
+		
+		list.add(lineNum);
+		}
 	
 	
 	
@@ -28,7 +34,9 @@ public class IndexNode  {
 	// string must be one line
 	
 	public String toString(){
-		return "";
+		return "Word: " + this.word + 
+				" Number of occurrences: " + this.occurrences +
+				" Lines it appears on: " + this.list.toString();
 	}
 	
 	

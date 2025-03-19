@@ -1,10 +1,11 @@
-
-
-
-
 // Your class. Notice how it has no generics.
 // This is because we use generics when we have no idea what kind of data we are getting
 // Here we know we are getting two pieces of data:  a string and a line number
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class IndexTree {
 
 	// This is your root 
@@ -14,13 +15,17 @@ public class IndexTree {
 	
 	// Make your constructor
 	// It doesn't need to do anything
+	public IndexTree() {
+		this.root = null;
+	}
 	
 	// complete the methods below
 	
 	// this is your wrapper method
 	// it takes in two pieces of data rather than one
-	// call your recursive add method
+	// call your recursive add method		
 	public void add(String word, int lineNumber){
+		this.root = add(this.root, word, lineNumber);
 		
 	}
 	
@@ -32,7 +37,22 @@ public class IndexTree {
 	// you want to  add it to the IndexNode that already exists
 	// otherwise make a new indexNode
 	private IndexNode add(IndexNode root, String word, int lineNumber){
-		return null;
+		if(root == null) {									//If word not in the tree, then add it
+			return new IndexNode(word, lineNumber);
+		}
+		
+		int comparison = word.compareTo(root.word);
+		
+		if(comparison == 0) {								//If word is already in tree, occurrence goes up
+			
+		}else if( comparison < 0) {							//Traverse left subtree 
+			root.left = add(root.left, word, lineNumber);
+			return root;
+		} else {											//Traverse right subtree
+			root.right = add(root.right, word, lineNumber);
+			return root;
+		}
+		
 	}
 	
 	
@@ -40,8 +60,27 @@ public class IndexTree {
 	
 	// returns true if the word is in the index
 	public boolean contains(String word){
-		return false;
+		return contains(this.root, word);
 	}
+	
+	private boolean contains(IndexNode root, String word) {
+		if(root == null) {
+			return false;
+		}
+		
+		int comparison = word.compareTo(root.word);
+		if(comparison == 0) {
+			return true;
+		} else if(comparison < 0) {
+			return contains(root.left, word);
+		} else {
+			return contains(root.right, word);
+		}
+		
+	}
+	
+	
+	
 	
 	// call your recursive method
 	// use book as guide
@@ -65,8 +104,10 @@ public class IndexTree {
 		
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws FileNotFoundException{
 		IndexTree index = new IndexTree();
+		Scanner scanner = new Scanner(new File("pg100.txt"));
+
 		
 		// add all the words to the tree
 		
