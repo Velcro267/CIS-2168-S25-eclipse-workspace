@@ -48,9 +48,13 @@ public class IndexTree {
 			return root;
 			
 		}else if( comparison < 0) {							//Traverse left subtree 
+			
+		    //System.out.println("Going left: " + word + " from " + root.word);
 			root.left = add(root.left, word, lineNumber);
 			return root;
 		} else {											//Traverse right subtree
+			
+		    //System.out.println("Going right: " + word + " from " + root.word);
 			root.right = add(root.right, word, lineNumber);
 			return root;
 		}
@@ -142,6 +146,12 @@ public class IndexTree {
 	public void printIndex(){
 		System.out.println(toString(this.root));
 		
+		//if(this.root == null) {
+		//	System.out.println("Tree is empty.");
+		//	return;
+		//}
+		//System.out.println("Printing index...");
+		//printTree(this.root);
 	}
 	
 	
@@ -152,9 +162,9 @@ public class IndexTree {
 		
 		StringBuilder bob = new StringBuilder();
 		bob.append(toString(root.left));
-		bob.append(" ");
+		bob.append("\n");
 		bob.append(root);
-		bob.append(" ");
+		bob.append("\n");
 		bob.append(toString(root.right));
 		
 		return bob.toString();
@@ -175,17 +185,24 @@ public class IndexTree {
 			for(String word : words) {
 				word = word.replaceAll(":", "");
 				word = word.replaceAll(",", "");
-				word = word.replaceAll(".", "");
+				word = word.replaceAll("\\.", "");
+				word = word.replaceAll("!", "");
+				word = word.replaceAll("\\?", "");
+				word = word.replaceAll("}", "");
+
+				word = word.toLowerCase();
 				index.add(word, lineNumber);
 			}
 			
 		}
 		
+		System.out.println("Contains 'apple'? " + index.contains("apple"));
+
 		// print out the index
-		index.printIndex();
+		//index.printIndex();
 		
 		// test removing a word from the index
-		index.delete("the");
+		//index.delete("the");
 
 		
 		scanner.close();

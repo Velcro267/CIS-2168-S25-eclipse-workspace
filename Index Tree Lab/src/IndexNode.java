@@ -34,8 +34,8 @@ public class IndexNode  {
 	
 	public String toString(){
 		return "Word: " + this.word + 
-				" Number of occurrences: " + this.occurrences +
-				" Lines it appears on: " + this.list.toString();
+				"; Number of occurrences: " + this.occurrences +
+				"; Lines it appears on: " + this.list.toString();
 	}
 	
 	
