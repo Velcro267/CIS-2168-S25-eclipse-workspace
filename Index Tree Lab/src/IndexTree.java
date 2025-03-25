@@ -45,6 +45,7 @@ public class IndexTree {
 		
 		if(comparison == 0) {								//If word is already in tree, occurrence goes up
 			root.occurrences++;
+			root.list.add(lineNumber);
 			return root;
 			
 		}else if( comparison < 0) {							//Traverse left subtree 
@@ -183,12 +184,14 @@ public class IndexTree {
 			lineNumber++;
 			String[] words = line.split("\\s+");
 			for(String word : words) {
-				word = word.replaceAll(":", "");
-				word = word.replaceAll(",", "");
-				word = word.replaceAll("\\.", "");
-				word = word.replaceAll("!", "");
-				word = word.replaceAll("\\?", "");
-				word = word.replaceAll("}", "");
+				//word = word.replaceAll(":", "");
+				//word = word.replaceAll(",", "");
+				//word = word.replaceAll("\\.", "");
+				//word = word.replaceAll("!", "");
+				//word = word.replaceAll("\\?", "");
+				//word = word.replaceAll("}", "");
+				//word = word.replaceAll("-", "");
+				word = word.replaceAll("[^a-zA-Z']", " ");
 
 				word = word.toLowerCase();
 				index.add(word, lineNumber);
@@ -196,14 +199,14 @@ public class IndexTree {
 			
 		}
 		
-		System.out.println("Contains 'apple'? " + index.contains("apple"));
+		//System.out.println("Contains 'apple'? " + index.contains("apple"));
 
 		// print out the index
-		//index.printIndex();
+		index.printIndex();
 		
 		// test removing a word from the index
-		index.delete("the");
-		System.out.println("Contains 'the'? " + index.contains("the"));
+		//index.delete("the");
+		//System.out.println("Contains 'the'? " + index.contains("the"));
 
 
 		
