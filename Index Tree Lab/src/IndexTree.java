@@ -202,7 +202,9 @@ public class IndexTree {
 		//index.printIndex();
 		
 		// test removing a word from the index
-		//index.delete("the");
+		index.delete("the");
+		System.out.println("Contains 'the'? " + index.contains("the"));
+
 
 		
 		scanner.close();
