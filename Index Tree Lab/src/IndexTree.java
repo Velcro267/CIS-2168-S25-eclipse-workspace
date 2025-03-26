@@ -202,11 +202,12 @@ public class IndexTree {
 		//System.out.println("Contains 'apple'? " + index.contains("apple"));
 
 		// print out the index
-		index.printIndex();
+		//index.printIndex();
 		
 		// test removing a word from the index
-		//index.delete("the");
-		//System.out.println("Contains 'the'? " + index.contains("the"));
+		index.delete("zone ");
+		System.out.println("Contains 'zone'? " + index.contains("zone"));
+		index.printIndex();
 
 
 		
