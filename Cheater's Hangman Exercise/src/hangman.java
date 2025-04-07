@@ -25,7 +25,7 @@ public class hangman {
 	
 	
 	public static void game(List<String> wordList, int numGuesses) {
-		Set<String> guessedLetters;
+		Set<Character> guessedLetters;
 		String currentState = "";
 		
 		
@@ -38,13 +38,12 @@ public class hangman {
 	
 	
 	
-	public static Map<String, List<String>> genWordFamilies(List<String> wordList, Set<String> guessed){
+	public static Map<String, List<String>> genWordFamilies(List<String> wordList, Set<Character> guessed){
+		Map<String, List<String>> familes = new HashMap<>();
 		
 		
 		
-		
-		
-		return null;
+		return familes;
 	}
 	
 	
