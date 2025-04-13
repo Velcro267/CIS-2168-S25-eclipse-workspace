@@ -7,7 +7,7 @@ public class Hangman_ {
     private static Map<Integer, List<String>> groupWords() {
         Map<Integer, List<String>> out = new HashMap<>();
         try {
-            Scanner wordFile = new Scanner(new File("temple_code/cis2168/HashMap/words.txt"));
+            Scanner wordFile = new Scanner(new File("words.txt"));
             while (wordFile.hasNext()) {
                 String word = wordFile.next().toLowerCase();
                 if (!out.containsKey(word.length()))
