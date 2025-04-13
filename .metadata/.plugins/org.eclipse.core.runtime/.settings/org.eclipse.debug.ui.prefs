@@ -1,7 +1,6 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=1dfe92ec452e6f54c39f1b6407992a8291d7b003
 eclipse.preferences.version=1
-<<<<<<< HEAD
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
-=======
-org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<launchPerspectives/>\n
->>>>>>> 1dfe92ec452e6f54c39f1b6407992a8291d7b003
 preferredTargets=default\:default|
