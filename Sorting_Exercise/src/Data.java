@@ -6,5 +6,9 @@ public class Data {
 		this.comparisons = comparisons;
 		this.exchanges = exchanges;
 	}
+	
+	public String toString() {
+		return "# of Comparisons:" + this.comparisons + "\n# of Exchanges: " + this.exchanges;
+	}
 
 }
