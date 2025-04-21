@@ -18,6 +18,8 @@ public class GraphDemo {
 		System.out.println("\nBreadth First Search starting from node 1:");
 		bfs(g, 1);
 		
+        System.out.println("\nDepth First Search starting from node 1:");
+        dfs(g, 1);
 	}
 
 	
@@ -50,6 +52,29 @@ public class GraphDemo {
 	
 	//Implement Depth First Search
 	//Follow "outline" from video
+    public static void dfs(Graph<Integer, String> g, Integer start) {
+    	Set<Integer> visited = new HashSet<>();
+    	Stack<Integer> stack = new Stack<>();
+    	
+    	stack.push(start);
+    	
+    	while(!stack.isEmpty()) {
+    		int current = stack.pop();
+    		if(!visited.contains(current)) {
+    			visited.add(current);
+    			System.out.print(current + " ");
+    			
+    			for(int neighbor : g.getNeighbors(current)) {
+    				if(!visited.contains(neighbor)) {
+    					stack.push(neighbor);
+    				}
+    			}
+    		}
+    		
+    	}
+    	
+    	
+    }
 
 	
 
